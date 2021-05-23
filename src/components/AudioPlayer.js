@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { baseurl } from '../common/constants';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '../css/components/AudioPlayer.css';
 
@@ -35,7 +36,7 @@ export default class AudiobookList extends Component {
 
     const playPauseIcon = this.state.isPlaying ? <FontAwesomeIcon icon={["fas", "pause"]} /> : <FontAwesomeIcon icon={["fas", "play"]} />;
     const playPauseButton = this.state.isPlaying ? <button onClick={this.pause}>{playPauseIcon}</button> : <button onClick={this.play}>{playPauseIcon}</button>;
-    const source = `http://localhost:8080/songs/${this.props.currentlyPlaying}/stream`;
+    const source = baseurl + `/songs/${this.props.currentlyPlaying}/stream`;
 
     return (
       <>

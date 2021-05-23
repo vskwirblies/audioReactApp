@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom";
+import { baseurl } from '../common/constants';
 
 export default class SongList extends Component {
   
@@ -15,7 +16,7 @@ export default class SongList extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8080/songs?page=1')
+    fetch(baseurl + '/songs?page=1')
     .then(response => response.json())
     .then(data => {
       this.setState({isLoading: false, songs: data});

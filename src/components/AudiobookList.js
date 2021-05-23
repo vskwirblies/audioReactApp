@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom";
+import { baseurl } from '../common/constants';
 import '../css/components/AudiobookList.css';
 
 export default class AudiobookList extends Component {
@@ -16,7 +17,7 @@ export default class AudiobookList extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8080/audiobooks')
+    fetch(baseurl + '/audiobooks')
     .then(response => response.json())
     .then(data => {
       this.setState({isLoading: false, audiobooks: data});

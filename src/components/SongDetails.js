@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { baseurl } from '../common/constants';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class SongDetails extends Component {
@@ -12,7 +13,7 @@ export default class SongDetails extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8080/songs/" + this.props.match.params.id)
+    fetch(baseurl + "/songs/" + this.props.match.params.id)
     .then(response => response.json())
     .then(data => {
       this.setState({isLoading: false, song: data});

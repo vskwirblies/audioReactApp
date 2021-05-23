@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {baseurl} from '../common/constants';
 
 export default class AudiobookDetails extends Component {
   
@@ -11,7 +12,7 @@ export default class AudiobookDetails extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8080/audiobooks/" + this.props.match.params.id)
+    fetch(baseurl + "/audiobooks/" + this.props.match.params.id)
     .then(response => response.json())
     .then(data => {
       this.setState({isLoading: false, audiobook: data});
