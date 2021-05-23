@@ -5,6 +5,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import ArtistList from './components/ArtistList';
+import ArtistDetails from './components/ArtistDetails';
 import AudiobookList from './components/AudiobookList';
 import AudiobookDetails from './components/AudiobookDetails';
 import AudioPlayer from './components/AudioPlayer';
@@ -37,12 +39,17 @@ export default class App extends React.Component {
         <Router>
           <nav className="nav">
             <ul>
+              <li><Link to="/artists">artists</Link></li>
               <li><Link to="/audiobooks">audiobooks</Link></li>
               <li><Link to="/songs">songs</Link></li>
             </ul>
           </nav>
           <main className="contentArea">
               <Switch>
+              <Route path="/artists/:id" component={ArtistDetails} />
+                <Route path="/artists">
+                  <ArtistList/>
+                </Route>
                 <Route path="/audiobooks/:id" component={AudiobookDetails} />
                 <Route path="/audiobooks">
                   <AudiobookList/>
