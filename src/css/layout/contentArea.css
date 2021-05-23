@@ -1,0 +1,14 @@
+.contentArea .header {
+    background-color: #e4e4e4;
+    height: 15rem;
+    padding: 3rem;
+}
+
+.contentArea .details {
+    padding: 3rem;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}

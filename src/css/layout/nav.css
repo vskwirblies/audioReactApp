@@ -1,0 +1,22 @@
+.nav {
+    background-color: #555;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav ul li {
+    display: inline-block;
+    padding: 1.2rem;
+}
+
+.nav ul li a:link,
+.nav ul li a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.nav ul li a:hover {
+    background-color: #000;
+  }
